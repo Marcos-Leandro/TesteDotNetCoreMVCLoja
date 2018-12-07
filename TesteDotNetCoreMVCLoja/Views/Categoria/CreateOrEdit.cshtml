@@ -1,0 +1,21 @@
+﻿@model Domain.DTO.CategoriaDTO
+
+@{
+    ViewData["Title"] = "CreateOrEdit";
+}
+
+<h2>CreateOrEdit</h2>
+
+<form asp-controller="Categoria" asp-action="CreateOrEdit" data-ajax="true" data-ajax-method="POST" data-ajax-failure="formOnFail" data-ajax-success="window.location = '/Categoria'">
+    Nome: <input asp-for="Nome" />
+    <span asp-validation-for="Nome" class="text-danger"></span>
+    <br>
+    <input type="submit" />
+</form>
+
+@section Scripts
+    {
+    <script src="~/js/jquery.validate.min.js"></script>
+    <script src="~/js/jquery.validate.unobtrusive.min.js"></script>
+    <script src="~/js/jquery.unobtrusive-ajax.min.js"></script>
+}
